@@ -1,5 +1,5 @@
 {
-    "name": "cayetanosoriano/hashids-bundle",
+    "name": "philetaylor/hashids-bundle",
     "description": "Bundle for integration of hashids lib to the container",
     "keywords": ["hashids"],
     "type": "symfony-bundle",
@@ -13,6 +13,10 @@
         {
             "name": "Cayetano Soriano",
             "email": "neoshadybeat@gmail.com"
+        },
+         {
+            "name": "Phil Taylor",
+            "email": "phil@phil-taylor.com"
         }
     ],
     "autoload": {
