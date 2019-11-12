@@ -17,9 +17,9 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('cayetanosoriano_hashids');
-        $rootNode
+        $treeBuilder = new TreeBuilder('cayetanosoriano_hashids');
+
+        $treeBuilder->getRootNode()
             ->children()
                 ->scalarNode('salt')->defaultNull()->end()
                 ->scalarNode('min_hash_length')->defaultValue(0)->end()
