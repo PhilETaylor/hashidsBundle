@@ -64,7 +64,7 @@ class HashidsDoctrineParamConverter implements ParamConverterInterface
      * @throws \LogicException       When unable to guess how to get a Doctrine instance from the request information
      * @throws NotFoundHttpException When object not found
      */
-    public function apply(Request $request, ParamConverter $configuration)
+    public function apply(Request $request, ParamConverter $configuration): bool
     {
         $name = $configuration->getName();
         $class = $configuration->getClass();
@@ -288,7 +288,7 @@ class HashidsDoctrineParamConverter implements ParamConverterInterface
     /**
      * {@inheritdoc}
      */
-    public function supports(ParamConverter $configuration)
+    public function supports(ParamConverter $configuration): bool
     {
         // if there is no manager, this means that only Doctrine DBAL is configured
         if (null === $this->registry || !\count($this->registry->getManagerNames())) {
