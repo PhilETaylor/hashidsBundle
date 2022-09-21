@@ -174,7 +174,16 @@ class HashidsDoctrineParamConverter implements ParamConverterInterface
         // If an identifier wasn’t found, check for a Hashid
         if ($request->attributes->has('hashid') || $request->attributes->has('hash_id') ) {
             $id = $request->attributes->get('hash_id') ? $request->attributes->get('hash_id') : $request->attributes->get('hashid');
+            if ($id==='null'||$id===null){
+                return false;
+            }
+            
             $decoded = $this->hashids->decode($id);
+
+            if (!is_array($decoded)){
+                return false;
+            }
+
             return $decoded[0];
         }
 
