@@ -17,7 +17,7 @@ class cayetanosorianoHashidsExtension extends Extension
     /**
      * {@inheritDoc}
      */
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
@@ -27,7 +27,5 @@ class cayetanosorianoHashidsExtension extends Extension
         $container->setParameter('cayetanosoriano_hashids.salt', $config['salt']);
         $container->setParameter('cayetanosoriano_hashids.min_hash_length', $config['min_hash_length']);
         $container->setParameter('cayetanosoriano_hashids.alphabet', $config['alphabet']);
-        
-
     }
 }
